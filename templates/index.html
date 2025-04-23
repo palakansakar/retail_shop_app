@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retail Shop Inquiry</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <p style="color: {% if category == 'error' %}red{% else %}green{% endif %};">
+          {{ message }}
+        </p>
+      {% endfor %}
+    {% endwith %}
+    <form method="POST" action="/send_inquiry">
+        <label>Name:</label><br>
+        <input type="text" name="name"><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+        <label>Message:</label><br>
+        <textarea name="message"></textarea><br><br>
+        <button type="submit">Send Inquiry</button>
+    </form>
+</body>
+</html>
