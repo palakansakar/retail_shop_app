@@ -20,4 +20,4 @@ CREATE TABLE IF NOT EXISTS products (
 conn.commit()
 conn.close()
 
-print("Database initialized..")
+print("Database initialized...")
